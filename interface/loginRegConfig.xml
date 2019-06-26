@@ -1,0 +1,56 @@
+<node>
+    <case>
+		<login>0</login>
+	</case>
+    <case>
+        <TestId>loginReg-testcase001</TestId>
+        <Title>用户登录</Title>
+        <Desc>正确用户名错误密码</Desc>
+        <Method>post</Method>
+        <Url>login_action/</Url>
+        <InptArg>{"username":"Johnson", "password":"00000"}</InptArg>
+        <Result>200</Result>
+        <CheckWord>用户名或密码错误</CheckWord>
+    </case>
+    <case>
+        <TestId>loginReg-testcase002</TestId>
+        <Title>用户登录</Title>
+        <Desc>错误用户名正确密码</Desc>
+        <Method>post</Method>
+        <Url>login_action/</Url>
+        <InptArg>{"username":"smith", "password":"12345"}</InptArg>
+        <Result>200</Result>
+        <CheckWord>用户名不存在，请注册</CheckWord>
+    </case>
+    <case>
+        <TestId>loginReg-testcase002</TestId>
+        <Title>用户登录</Title>
+        <Desc>正确用户名正确密码</Desc>
+        <Method>post</Method>
+        <Url>login_action/</Url>
+        <InptArg>{"username":"Johnson", "password":"12345"}</InptArg>
+        <Result>200</Result>
+        <CheckWord>查看购物车</CheckWord>
+    </case>
+    <case>
+        <TestId>loginReg-testcase001</TestId>
+        <Title>用户注册</Title>
+        <Desc>注册用户名已存在</Desc>
+        <Method>post</Method>
+        <Url>register/</Url>
+        <InptArg>{"username":"Johnson", "password":"12345", "email":"Johnson@126.com"}</InptArg>
+        <Result>200</Result>
+        <CheckWord>用户名已存在！</CheckWord>
+    </case>
+    <case>
+        <TestId>loginReg-testcase002</TestId>
+        <Title>用户注册</Title>
+        <Desc>注册用户名不存在</Desc>
+        <Method>post</Method>
+        <Url>register/</Url>
+        <InptArg>{"username":"smith", "password":"12345", "email":"smith@126.com"}</InptArg>
+        <Result>200</Result>
+        <CheckWord>用户名已注册！请登录</CheckWord>
+    </case>
+
+</node>
