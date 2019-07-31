@@ -1,7 +1,7 @@
 import hashlib
 import sqlite3
 from xml.dom import minidom
-
+import os
 import requests
 
 
@@ -138,7 +138,9 @@ class GetXML:
 class DB:
     #构造方法，获取sqlite3数据库文件的位置
     def __init__(self):
-        self.url = '/media/gzr/HRR/mywebsite1/db.sqlite3'
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        #self.url = '/media/gzr/HRR/mywebsite1/db.sqlite3'
+        self.url = os.path.join(base_dir,'db.sqlite3')
 
     # 连接数据库
     def connect(self):
